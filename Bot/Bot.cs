@@ -501,6 +501,7 @@ namespace Bot
                 }
                 else
                 {
+                    await botClient.SendStickerAsync(message.Chat.Id, "https://cdn.tlgrm.app/stickers/ccd/a8d/ccda8d5d-d492-4393-8bb7-e33f77c24907/192/10.webp");
                     await botClient.SendTextMessageAsync(message.Chat.Id,
                          "You do not have any favorite games for now.\n"
                          + "You can add them using /add_to_favorites via reply for the game!"
