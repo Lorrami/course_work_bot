@@ -288,37 +288,33 @@ namespace Bot
         {
             if (message.Text == "/start")
             {
-                _isFound = true;
                 await botClient.SendTextMessageAsync(message.Chat.Id, 
                     "Welcome to best game searching bot!\n" 
-                    + "We will try to help you find a lot of games depends on your fav genres and PC specs.\n" 
+                    + "We will try to help you find a lot of games depends on your fav genres and PC specs.  😈\n" 
                     + "/menu - to show all commands\n"
                     , cancellationToken: _cancellationToken);
             }
             else if (message.Text == "/menu")
             {
-                _isFound = true;
                 await botClient.SendTextMessageAsync(message.Chat.Id, 
                     "Bot commands: \n" 
                     + "/menu - to show all commands\n"
-                    + "/about - to show bot info\n"
-                    + "/games - to find games\n"
-                    + "/favorites - to show your elected games", cancellationToken: _cancellationToken);
+                    + "/about - to show bot info \n"
+                    + "/games - to find games 🎮\n"
+                    + "/favorites - to show your elected games 📕", cancellationToken: _cancellationToken);
             } 
             else if (message.Text == "/about")
             {
-                _isFound = true;
                 await botClient.SendTextMessageAsync(message.Chat.Id, 
                     "Use /menu to see all bot commands. \n" 
-                    + "This bot was created by Lorrami and based on web api which is also created by Lorrami.\n"
+                    + "This bot was created by Lorrami🤙🏻 and based on web api which is also created by Lorrami.\n"
                     + "You can use bot to find games that will fit your favorite genres and PC specs.\n"
-                    + "To start searching type /search and follow the next steps. GG!\n"
+                    + "To start searching type /search and follow the next steps. GG! 🔫\n"
                     + "\nIf you have some any problems with bot or any suggestions, feel free to DM @Lorrami!",
                     cancellationToken: _cancellationToken);
             } 
             else if (message.Text == "/games")
             {
-                _isFound = true;
                 await botClient.SendTextMessageAsync(message.Chat.Id, 
                     "Yeah, let's look for some games: \n" 
                     + "/all - to show all games in database\n"
@@ -332,7 +328,6 @@ namespace Bot
             } 
             else if (message.Text == "/search_game")
             {
-                _isFound = true;
                 _userParams = new UserParams();
                 _continue = false;
                 await ChooseProcessor(botClient, message);
@@ -343,12 +338,16 @@ namespace Bot
             }
             else if (message.Text == "/continue")
             {
-                _isFound = true;
+                if (_isFound)
+                {
+                    
+                }
                 if (_userParams.Processor == null || _userParams.Graphics == null)
                 {
                     await botClient.SendTextMessageAsync(message.Chat.Id, 
-                        "You did not chose something, please, be attentive. Check and type /continue! \n" 
+                        "🟥 You did not chose something, please, be attentive. Check and type /continue! \n" 
                         , cancellationToken: _cancellationToken);
+                    await botClient.SendStickerAsync(message.Chat.Id, "https://tlgrm.ru/_/stickers/ccd/a8d/ccda8d5d-d492-4393-8bb7-e33f77c24907/21.webp");
                 }
                 else
                 {
@@ -356,11 +355,11 @@ namespace Bot
                     _continue = true;
                     client.PutUserParams(_userParams);
                     await botClient.SendTextMessageAsync(message.Chat.Id,
-                        "Please, wait. We are searching a game for you... \n"
+                        "Please, wait. We are searching🔍 a game for you... \n"
                         , cancellationToken: _cancellationToken);
                     var game = client.GetGameByUserParams();
                     await botClient.SendTextMessageAsync(message.Chat.Id,
-                        "We have found the game " + game.Data.Name + " for you." + '\n' +
+                        "🟩 We have found the game " + game.Data.Name + " for you." + '\n' +
                         "You have a " + game.Data.Pc_Requirements.Level + " parameters for it!" + game.Data.Pc_Requirements.Notes + '\n'
                         , cancellationToken: _cancellationToken);
                     if (game.Data.MetaCritic != null)
@@ -369,12 +368,12 @@ namespace Bot
                             "Info about " + game.Data.Name + ": \n" +
                             "Official web-site: " + game.Data.WebSite + '\n' +
                             "MetaCritic: " + game.Data.MetaCritic.Score + '\n' +
-                            "Minimum PC requirements: \n" +
-                            "  OS: " + game.Data.Pc_Requirements.MinimumOS + '\n' +
-                            "  Graphics: " + game.Data.Pc_Requirements.MinimumGraphics + '\n' +
-                            "  Processor: " + game.Data.Pc_Requirements.MinimumProcessor + '\n' +
-                            "  RAM: " + game.Data.Pc_Requirements.MinimumMemory + '\n' +
-                            "  Storage: " + game.Data.Pc_Requirements.MinimumStorage + '\n'
+                            "🖥 Minimum PC requirements: \n" +
+                            " 📟 OS: " + game.Data.Pc_Requirements.MinimumOS + '\n' +
+                            " 📼 Graphics: " + game.Data.Pc_Requirements.MinimumGraphics + '\n' +
+                            " ♨ Processor: " + game.Data.Pc_Requirements.MinimumProcessor + '\n' +
+                            " 💾 RAM: " + game.Data.Pc_Requirements.MinimumMemory + '\n' +
+                            " 💿 Storage: " + game.Data.Pc_Requirements.MinimumStorage + '\n'
                             , cancellationToken: _cancellationToken);
                     } 
                     else
@@ -382,19 +381,18 @@ namespace Bot
                         await botClient.SendTextMessageAsync(message.Chat.Id,
                             "Info about " + game.Data.Name + ": \n" +
                             "Official web-site: " + game.Data.WebSite + '\n' +
-                            "Minimum PC requirements: \n" +
-                            "  OS: " + game.Data.Pc_Requirements.MinimumOS + '\n' +
-                            "  Graphics: " + game.Data.Pc_Requirements.MinimumGraphics + '\n' +
-                            "  Processor: " + game.Data.Pc_Requirements.MinimumProcessor + '\n' +
-                            "  RAM: " + game.Data.Pc_Requirements.MinimumMemory + '\n' +
-                            "  Storage: " + game.Data.Pc_Requirements.MinimumStorage + '\n'
+                            "🖥 Minimum PC requirements: \n" +
+                            " 📟 OS: " + game.Data.Pc_Requirements.MinimumOS + '\n' +
+                            " 📼 Graphics: " + game.Data.Pc_Requirements.MinimumGraphics + '\n' +
+                            " ♨ Processor: " + game.Data.Pc_Requirements.MinimumProcessor + '\n' +
+                            " 💾 RAM: " + game.Data.Pc_Requirements.MinimumMemory + '\n' +
+                            " 💿 Storage: " + game.Data.Pc_Requirements.MinimumStorage + '\n'
                             , cancellationToken: _cancellationToken);
                     }
                 }
             }
             else if (message.Text == "/search_by_genre")
             {
-                _isFound = true;
                 _continue = false;
                 _gamesByGenres = new List<string>();
                 await SearchByGenre(botClient, message);
@@ -404,17 +402,18 @@ namespace Bot
             }
             else if (message.Text == "/continue_with_genre")
             {
-                _isFound = true;
                 if (_gamesByGenres.Count <= 0)
                 {
+                    await botClient.SendStickerAsync(message.Chat.Id, "https://tlgrm.ru/_/stickers/ccd/a8d/ccda8d5d-d492-4393-8bb7-e33f77c24907/21.webp");
                     await botClient.SendTextMessageAsync(message.Chat.Id,
-                        "You did not choose you genres! \n"
+                        "❌ You did not choose you genres! \n"
                         , cancellationToken: _cancellationToken);
                 }
                 else if (_gamesByGenres.Count > 3)
                 {
+                    await botClient.SendStickerAsync(message.Chat.Id, "https://tlgrm.ru/_/stickers/ccd/a8d/ccda8d5d-d492-4393-8bb7-e33f77c24907/21.webp");
                     await botClient.SendTextMessageAsync(message.Chat.Id,
-                        "You chose more than 3 genres!(Specifically " + _gamesByGenres.Count + ")\n"
+                        "❌ You chose more than 3 genres!(Specifically " + _gamesByGenres.Count + ")\n"
                         , cancellationToken: _cancellationToken);
                 }
                 else
@@ -434,12 +433,12 @@ namespace Bot
                                 "Info about " + game.Data.Name + ": \n" +
                                 "Official web-site: " + game.Data.WebSite + '\n' +
                                 "MetaCritic: " + game.Data.MetaCritic.Score + '\n' +
-                                "Minimum PC requirements: \n" +
-                                "  OS: " + game.Data.Pc_Requirements.MinimumOS + '\n' +
-                                "  Graphics: " + game.Data.Pc_Requirements.MinimumGraphics + '\n' +
-                                "  Processor: " + game.Data.Pc_Requirements.MinimumProcessor + '\n' +
-                                "  RAM: " + game.Data.Pc_Requirements.MinimumMemory + '\n' +
-                                "  Storage: " + game.Data.Pc_Requirements.MinimumStorage + '\n'
+                                "🖥 Minimum PC requirements: \n" +
+                                " 📟 OS: " + game.Data.Pc_Requirements.MinimumOS + '\n' +
+                                " 📼 Graphics: " + game.Data.Pc_Requirements.MinimumGraphics + '\n' +
+                                " ♨ Processor: " + game.Data.Pc_Requirements.MinimumProcessor + '\n' +
+                                " 💾 RAM: " + game.Data.Pc_Requirements.MinimumMemory + '\n' +
+                                " 💿 Storage: " + game.Data.Pc_Requirements.MinimumStorage + '\n'
                                 , cancellationToken: _cancellationToken);
                         } 
                         else
@@ -448,11 +447,11 @@ namespace Bot
                                 "Info about " + game.Data.Name + ": \n" +
                                 "Official web-site: " + game.Data.WebSite + '\n' +
                                 "Minimum PC requirements: \n" +
-                                "  OS: " + game.Data.Pc_Requirements.MinimumOS + '\n' +
-                                "  Graphics: " + game.Data.Pc_Requirements.MinimumGraphics + '\n' +
-                                "  Processor: " + game.Data.Pc_Requirements.MinimumProcessor + '\n' +
-                                "  RAM: " + game.Data.Pc_Requirements.MinimumMemory + '\n' +
-                                "  Storage: " + game.Data.Pc_Requirements.MinimumStorage + '\n'
+                                " 📟 OS: " + game.Data.Pc_Requirements.MinimumOS + '\n' +
+                                " 📼 Graphics: " + game.Data.Pc_Requirements.MinimumGraphics + '\n' +
+                                " ♨ Processor: " + game.Data.Pc_Requirements.MinimumProcessor + '\n' +
+                                " 💾 RAM: " + game.Data.Pc_Requirements.MinimumMemory + '\n' +
+                                " 💿 Storage: " + game.Data.Pc_Requirements.MinimumStorage + '\n'
                                 , cancellationToken: _cancellationToken);
                         }
                     }
@@ -460,7 +459,6 @@ namespace Bot
             }
             else if (message.Text == "/all")
             { 
-                _isFound = true;
                 var client = new Client();
                 client.GetGamesList();
                 foreach (var game in Client.Result)
@@ -472,7 +470,6 @@ namespace Bot
             } 
             else if (message.Text == "/genres")
             {
-                _isFound = true;
                 await botClient.SendTextMessageAsync(message.Chat.Id, 
                     "All genres you can choose from:\n "
                     , cancellationToken: _cancellationToken);
@@ -515,6 +512,7 @@ namespace Bot
                 var name = message.ReplyToMessage?.Text;
                 if (name == null)
                 {
+                    await botClient.SendStickerAsync(message.Chat.Id, "https://tlgrm.ru/_/stickers/ccd/a8d/ccda8d5d-d492-4393-8bb7-e33f77c24907/21.webp");
                     await botClient.SendTextMessageAsync(message.Chat.Id, 
                         "This command must be send via reply to computers name!!!\n" 
                         , cancellationToken: _cancellationToken);
@@ -530,6 +528,7 @@ namespace Bot
                         {
                             found = true;
                             client.PutGamesIntoDB(message, Convert.ToString(game.Data.Id));
+                            await botClient.SendStickerAsync(message.Chat.Id, "https://cdn.tlgrm.app/stickers/ccd/a8d/ccda8d5d-d492-4393-8bb7-e33f77c24907/192/1.webp");
                             await botClient.SendTextMessageAsync(message.Chat.Id, 
                                 "Successfully added to your favorites!\n" 
                                 , cancellationToken: _cancellationToken);
@@ -542,8 +541,10 @@ namespace Bot
 
                     if (found)
                     {
+                        await botClient.SendStickerAsync(message.Chat.Id, "https://cdn.tlgrm.app/stickers/ccd/a8d/ccda8d5d-d492-4393-8bb7-e33f77c24907/192/10.webp");
+
                         await botClient.SendTextMessageAsync(message.Chat.Id, 
-                            "Ypu missed with the reply!\n"
+                            "You missed with the reply!\n"
                             + "We did not find that game. Try again!"
                             , cancellationToken: _cancellationToken);
                     }
@@ -553,6 +554,7 @@ namespace Bot
             {
                 Client client = new Client();
                 client.DeleteGameFromDB(message);
+                await botClient.SendStickerAsync(message.Chat.Id, "https://cdn.tlgrm.app/stickers/ccd/a8d/ccda8d5d-d492-4393-8bb7-e33f77c24907/192/1.webp");
                 await botClient.SendTextMessageAsync(message.Chat.Id,
                     "Successfully deleted all from your favorites!\n"
                     , cancellationToken: _cancellationToken);

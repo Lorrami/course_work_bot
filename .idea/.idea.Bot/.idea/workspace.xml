@@ -5,6 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ec73bd81-efd2-4f47-a268-6f4fc6e89a7a" name="Changes" comment="Add some shit">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Bot/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Bot/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Bot/Bot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Bot/Bot.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -74,7 +75,7 @@
       <updated>1655550693525</updated>
       <workItem from="1655550735305" duration="69592000" />
       <workItem from="1656312425223" duration="37022000" />
-      <workItem from="1656508155663" duration="4374000" />
+      <workItem from="1656508155663" duration="6259000" />
     </task>
     <task id="LOCAL-00001" summary="Some shit">
       <created>1656511194895</created>
@@ -122,24 +123,5 @@
     <MESSAGE value="More and more and more shit" />
     <MESSAGE value="Add some shit" />
     <option name="LAST_COMMIT_MESSAGE" value="Add some shit" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Bot/Bot.cs</url>
-          <line>494</line>
-          <properties documentPath="C:\Users\wwwro\Desktop\Projects\C#\RestAPI+Bot\Bot\Bot\Bot.cs" initialLine="493" containingFunctionPresentation="method 'HandlerMessageAsync'">
-            <startOffsets>
-              <option value="26275" />
-            </startOffsets>
-            <endOffsets>
-              <option value="26301" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="41" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>
