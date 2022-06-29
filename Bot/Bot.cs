@@ -309,7 +309,7 @@ namespace Bot
                     "Use /menu to see all bot commands. \n" 
                     + "This bot was created by Lorrami🤙🏻 and based on web api which is also created by Lorrami.\n"
                     + "You can use bot to find games that will fit your favorite genres and PC specs.\n"
-                    + "To start searching type /search and follow the next steps. GG! 🔫\n"
+                    + "To start searching type /games and follow the next steps. GG! 🔫\n"
                     + "\nIf you have some any problems with bot or any suggestions, feel free to DM @Lorrami!",
                     cancellationToken: _cancellationToken);
             } 
