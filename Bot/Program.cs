@@ -2,5 +2,4 @@
 await bot.Start();
 while (true)
 {
-    
 }
