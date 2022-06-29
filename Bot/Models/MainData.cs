@@ -8,6 +8,8 @@
     public int Id { get; set; }
 
     public int Required_Age { get; set; }
+    
+    public string Header_Image { get; set; }
 
     public string WebSite { get; set; }
 

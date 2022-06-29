@@ -463,6 +463,7 @@ namespace Bot
                 client.GetGamesList();
                 foreach (var game in Client.Result)
                 {
+                    await botClient.SendPhotoAsync(message.Chat.Id, game.Data.Header_Image, game.Data.Name);
                     await botClient.SendTextMessageAsync(message.Chat.Id, 
                         game.Data.Name+'\n'
                         , cancellationToken: _cancellationToken);
