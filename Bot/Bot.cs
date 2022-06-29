@@ -35,7 +35,6 @@ namespace Bot
             _botClient.StartReceiving(HandlerUpdateAsync, HandlerError, _receiverOptions, _cancellationToken);
             var botMe = await _botClient.GetMeAsync();
             Console.WriteLine(botMe + "is working!");
-            Console.ReadKey();
         }
         private async Task HandlerUpdateAsync(ITelegramBotClient botClient, Update update, CancellationToken cancellationToken)
         {

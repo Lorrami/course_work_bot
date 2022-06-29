@@ -4,9 +4,7 @@
     <projectFile>Bot/Bot.csproj</projectFile>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ec73bd81-efd2-4f47-a268-6f4fc6e89a7a" name="Changes" comment="Some shit">
-      <change beforePath="$PROJECT_DIR$/Bot/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Bot/Program.cs" afterDir="false" />
-    </list>
+    <list default="true" id="ec73bd81-efd2-4f47-a268-6f4fc6e89a7a" name="Changes" comment="Some shit" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -72,7 +70,7 @@
       <updated>1655550693525</updated>
       <workItem from="1655550735305" duration="69592000" />
       <workItem from="1656312425223" duration="37022000" />
-      <workItem from="1656508155663" duration="1068000" />
+      <workItem from="1656508155663" duration="1663000" />
     </task>
     <task id="LOCAL-00001" summary="Some shit">
       <created>1656511194895</created>
