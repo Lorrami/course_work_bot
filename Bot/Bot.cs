@@ -534,10 +534,6 @@ namespace Bot
                                 "Successfully added to your favorites!\n" 
                                 , cancellationToken: _cancellationToken);
                         }
-                        else
-                        {
-                            found = false;
-                        }
                     }
 
                     if (!found)
