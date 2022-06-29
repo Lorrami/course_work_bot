@@ -14,7 +14,7 @@ namespace Bot
             var request = new HttpRequestMessage
             {
                 Method = HttpMethod.Get,
-                RequestUri = new Uri("https://localhost:7200/GamesList"),
+                RequestUri = new Uri("https://api228007.herokuapp.com/GamesList"),
             };
             var response = client.SendAsync(request);
             var body = response.Result.Content.ReadAsStringAsync();
@@ -27,7 +27,7 @@ namespace Bot
         public void PutUserParams(UserParams userParams)
         {
             var client = new HttpClient();
-            var response = client.PostAsJsonAsync("https://localhost:7200/UserParams", userParams).Result;
+            var response = client.PostAsJsonAsync("https://api228007.herokuapp.com/UserParams", userParams).Result;
         }
         public GameData GetGameByUserParams()
         {
@@ -35,7 +35,7 @@ namespace Bot
             var request = new HttpRequestMessage
             {
                 Method = HttpMethod.Get,
-                RequestUri = new Uri("https://localhost:7200/GetGameByUserParams"),
+                RequestUri = new Uri("https://api228007.herokuapp.com/GetGameByUserParams"),
             };
             var response = client.SendAsync(request);
             var body = response.Result.Content.ReadAsStringAsync();
@@ -47,7 +47,7 @@ namespace Bot
         public void PutUserGenres(List<string> genres)
         {
             var client = new HttpClient();
-            var response = client.PostAsJsonAsync("https://localhost:7200/UserGenres", genres).Result;
+            var response = client.PostAsJsonAsync("https://api228007.herokuapp.com/UserGenres", genres).Result;
         }
         public List<GameData> GetGameByGenres()
         {
@@ -55,7 +55,7 @@ namespace Bot
             var request = new HttpRequestMessage
             {
                 Method = HttpMethod.Get,
-                RequestUri = new Uri("https://localhost:7200/GetGameByUserGenres"),
+                RequestUri = new Uri("https://api228007.herokuapp.com/GetGameByUserGenres"),
             };
             var response = client.SendAsync(request);
             var body = response.Result.Content.ReadAsStringAsync();
@@ -71,7 +71,7 @@ namespace Bot
             var request = new HttpRequestMessage
             {
                 Method = HttpMethod.Get,
-                RequestUri = new Uri("https://localhost:7200/DynamoDb?chatId="+message.Chat.Id),
+                RequestUri = new Uri("https://api228007.herokuapp.com/DynamoDb?chatId="+message.Chat.Id),
             };
             var response = await client.SendAsync(request);
             var body = await response.Content.ReadAsStringAsync();
@@ -87,7 +87,7 @@ namespace Bot
             var request = new HttpRequestMessage
             {
                 Method = HttpMethod.Put,
-                RequestUri = new Uri("https://localhost:7200/DynamoDb?chatId=" + message.Chat.Id + "&key=" + key),
+                RequestUri = new Uri("https://api228007.herokuapp.com/DynamoDb?chatId=" + message.Chat.Id + "&key=" + key),
             };
             var response = client.SendAsync(request);
         } 
@@ -98,7 +98,7 @@ namespace Bot
             var request = new HttpRequestMessage
             {
                 Method = HttpMethod.Delete,
-                RequestUri = new Uri("https://localhost:7200/DynamoDb?chatId=" + message.Chat.Id),
+                RequestUri = new Uri("https://api228007.herokuapp.com/DynamoDb?chatId=" + message.Chat.Id),
             };
             var response = client.SendAsync(request);
         } 
