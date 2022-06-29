@@ -364,7 +364,7 @@ namespace Bot
                         , cancellationToken: _cancellationToken);
                     if (game.Data.MetaCritic != null)
                     {
-                        await botClient.SendTextMessageAsync(message.Chat.Id,
+                        await botClient.SendPhotoAsync(message.Chat.Id, game.Data.Header_Image,
                             "Info about " + game.Data.Name + ": \n" +
                             "Official web-site: " + game.Data.WebSite + '\n' +
                             "MetaCritic: " + game.Data.MetaCritic.Score + '\n' +
@@ -373,21 +373,18 @@ namespace Bot
                             " 📼 Graphics: " + game.Data.Pc_Requirements.MinimumGraphics + '\n' +
                             " ♨ Processor: " + game.Data.Pc_Requirements.MinimumProcessor + '\n' +
                             " 💾 RAM: " + game.Data.Pc_Requirements.MinimumMemory + '\n' +
-                            " 💿 Storage: " + game.Data.Pc_Requirements.MinimumStorage + '\n'
-                            , cancellationToken: _cancellationToken);
+                            " 💿 Storage: " + game.Data.Pc_Requirements.MinimumStorage + '\n');
                     } 
                     else
                     {
-                        await botClient.SendTextMessageAsync(message.Chat.Id,
-                            "Info about " + game.Data.Name + ": \n" +
+                        await botClient.SendPhotoAsync(message.Chat.Id, game.Data.Header_Image, "Info about " + game.Data.Name + ": \n" +
                             "Official web-site: " + game.Data.WebSite + '\n' +
-                            "🖥 Minimum PC requirements: \n" +
+                            "Minimum PC requirements: \n" +
                             " 📟 OS: " + game.Data.Pc_Requirements.MinimumOS + '\n' +
                             " 📼 Graphics: " + game.Data.Pc_Requirements.MinimumGraphics + '\n' +
                             " ♨ Processor: " + game.Data.Pc_Requirements.MinimumProcessor + '\n' +
                             " 💾 RAM: " + game.Data.Pc_Requirements.MinimumMemory + '\n' +
-                            " 💿 Storage: " + game.Data.Pc_Requirements.MinimumStorage + '\n'
-                            , cancellationToken: _cancellationToken);
+                            " 💿 Storage: " + game.Data.Pc_Requirements.MinimumStorage + '\n');
                     }
                 }
             }
@@ -429,7 +426,7 @@ namespace Bot
                     {
                         if (game.Data.MetaCritic != null)
                         {
-                            await botClient.SendTextMessageAsync(message.Chat.Id,
+                            await botClient.SendPhotoAsync(message.Chat.Id, game.Data.Header_Image,
                                 "Info about " + game.Data.Name + ": \n" +
                                 "Official web-site: " + game.Data.WebSite + '\n' +
                                 "MetaCritic: " + game.Data.MetaCritic.Score + '\n' +
@@ -438,21 +435,18 @@ namespace Bot
                                 " 📼 Graphics: " + game.Data.Pc_Requirements.MinimumGraphics + '\n' +
                                 " ♨ Processor: " + game.Data.Pc_Requirements.MinimumProcessor + '\n' +
                                 " 💾 RAM: " + game.Data.Pc_Requirements.MinimumMemory + '\n' +
-                                " 💿 Storage: " + game.Data.Pc_Requirements.MinimumStorage + '\n'
-                                , cancellationToken: _cancellationToken);
+                                " 💿 Storage: " + game.Data.Pc_Requirements.MinimumStorage + '\n');
                         } 
                         else
                         {
-                            await botClient.SendTextMessageAsync(message.Chat.Id,
-                                "Info about " + game.Data.Name + ": \n" +
+                            await botClient.SendPhotoAsync(message.Chat.Id, game.Data.Header_Image, "Info about " + game.Data.Name + ": \n" +
                                 "Official web-site: " + game.Data.WebSite + '\n' +
                                 "Minimum PC requirements: \n" +
                                 " 📟 OS: " + game.Data.Pc_Requirements.MinimumOS + '\n' +
                                 " 📼 Graphics: " + game.Data.Pc_Requirements.MinimumGraphics + '\n' +
                                 " ♨ Processor: " + game.Data.Pc_Requirements.MinimumProcessor + '\n' +
                                 " 💾 RAM: " + game.Data.Pc_Requirements.MinimumMemory + '\n' +
-                                " 💿 Storage: " + game.Data.Pc_Requirements.MinimumStorage + '\n'
-                                , cancellationToken: _cancellationToken);
+                                " 💿 Storage: " + game.Data.Pc_Requirements.MinimumStorage + '\n');
                         }
                     }
                 }
@@ -464,9 +458,6 @@ namespace Bot
                 foreach (var game in Client.Result)
                 {
                     await botClient.SendPhotoAsync(message.Chat.Id, game.Data.Header_Image, game.Data.Name);
-                    await botClient.SendTextMessageAsync(message.Chat.Id, 
-                        game.Data.Name+'\n'
-                        , cancellationToken: _cancellationToken);
                 }
             } 
             else if (message.Text == "/genres")
@@ -488,15 +479,13 @@ namespace Bot
                 if (list.Count > 0)
                 {
                     await botClient.SendTextMessageAsync(message.Chat.Id,
-                        "Your favorite games: \n"
+                        "Your favorite ✨ games: \n"
                         , cancellationToken: _cancellationToken);
                     foreach (var game in list)
                     {
                         if (game != null)
                         {
-                            await botClient.SendTextMessageAsync(message.Chat.Id,
-                                game.Data.Name + "\n"
-                                , cancellationToken: _cancellationToken);
+                            await botClient.SendPhotoAsync(message.Chat.Id, game.Data.Header_Image, game.Data.Name);
                         }
                     }
                 }
