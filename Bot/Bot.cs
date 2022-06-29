@@ -500,7 +500,7 @@ namespace Bot
             }
             else if (message.Text == "/add_to_favorites")
             {
-                var name = message.ReplyToMessage?.Text;
+                var name = message.ReplyToMessage?.Caption;
                 if (name == null)
                 {
                     await botClient.SendStickerAsync(message.Chat.Id, "https://tlgrm.ru/_/stickers/ccd/a8d/ccda8d5d-d492-4393-8bb7-e33f77c24907/21.webp");
