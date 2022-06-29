@@ -561,7 +561,7 @@ namespace Bot
             {
                 await botClient.SendStickerAsync(message.Chat.Id, "https://tlgrm.ru/_/stickers/ccd/a8d/ccda8d5d-d492-4393-8bb7-e33f77c24907/21.webp");
                 await botClient.SendTextMessageAsync(message.Chat.Id, 
-                    "Wrong command, you check available commands by typing /menu! \n" 
+                    "Wrong command! You could check available commands by typing /menu! \n" 
                     , cancellationToken: _cancellationToken);
             }
         }

@@ -4,8 +4,7 @@
     <projectFile>Bot/Bot.csproj</projectFile>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ec73bd81-efd2-4f47-a268-6f4fc6e89a7a" name="Changes" comment="More and more and more shit">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Bot/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Bot/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="ec73bd81-efd2-4f47-a268-6f4fc6e89a7a" name="Changes" comment="Add some shit">
       <change beforePath="$PROJECT_DIR$/Bot/Bot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Bot/Bot.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -22,6 +21,7 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/c1da7b6c7c71a954fe3eb2531c6476711b3e6d93a8d76795386d326bb9dbc/ExecutionContext.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/cf91eb35ab781c324ad4fa382dce85631ec37cf3813529f7c92208d866c851/TaskContinuation.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/d69b14ea3c7dd13779ede6d867b70c3e4613ed270162db37c6569812c282d74/DefaultUpdateReceiver.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/wwwro/Desktop/Projects/C#/RestAPI+Bot/Bot/Bot/Bot.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://C:/Users/wwwro/Desktop/Projects/C#/RestAPI+Bot/Bot/Bot/Bot.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://C:/Users/wwwro/Desktop/Projects/C#/RestAPI+Bot/Bot/Bot/Client.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
@@ -74,7 +74,7 @@
       <updated>1655550693525</updated>
       <workItem from="1655550735305" duration="69592000" />
       <workItem from="1656312425223" duration="37022000" />
-      <workItem from="1656508155663" duration="3851000" />
+      <workItem from="1656508155663" duration="4374000" />
     </task>
     <task id="LOCAL-00001" summary="Some shit">
       <created>1656511194895</created>
@@ -90,7 +90,14 @@
       <option name="project" value="LOCAL" />
       <updated>1656512594991</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Add some shit">
+      <created>1656524347364</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1656524347364</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -113,7 +120,8 @@
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
     <MESSAGE value="Some shit" />
     <MESSAGE value="More and more and more shit" />
-    <option name="LAST_COMMIT_MESSAGE" value="More and more and more shit" />
+    <MESSAGE value="Add some shit" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add some shit" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
